@@ -10,6 +10,7 @@ public class Item {
 	private int stock;
 	private int categoryId;
 	private LocalDateTime deletedAt;
+	private Category category;
 
 	public int getId() {
 		return id;
@@ -57,5 +58,13 @@ public class Item {
 
 	public void setDeletedAt(LocalDateTime deletedAt) {
 		this.deletedAt = deletedAt;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 }
