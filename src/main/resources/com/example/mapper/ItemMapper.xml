@@ -65,4 +65,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		=#{price},CATEGORY_ID=#{categoryId}
 		WHERE ID=#{id}
 	</update>
+
+	<delete id="deleteById">
+		DELETE FROM ITEMS WHERE ID=#{id}
+	</delete>
 </mapper>
