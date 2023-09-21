@@ -29,6 +29,14 @@ public class ItemService {
 		return this.itemMapper.findById(id);
 	}
 
+	public void update(Integer id, String name, Integer price, Integer categoryId) {
+		Item item = new Item();
+		item.setId(id);
+		item.setName(name);
+		item.setPrice(price);
+		item.setCategoryId(categoryId);
+		this.itemMapper.update(item);
 
+	}
 
 }

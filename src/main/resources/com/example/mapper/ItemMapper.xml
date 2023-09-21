@@ -57,6 +57,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		C.ID=I.CATEGORY_ID
 		WHERE
 		I.ID=#{id}
-
 	</select>
+
+	<update id="update">
+		UPDATE ITEMS SET NAME
+		=#{name},PRICE
+		=#{price},CATEGORY_ID=#{categoryId}
+		WHERE ID=#{id}
+	</update>
 </mapper>
