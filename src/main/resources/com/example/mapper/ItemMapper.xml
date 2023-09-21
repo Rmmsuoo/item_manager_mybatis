@@ -33,4 +33,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ON
 		C.ID=I.CATEGORY_ID
 	</select>
+
+	<insert id="insert" useGeneratedKeys="true" keyColumn="ID"
+		keyProperty="id">
+		INSERT INTO ITEMS (ID,NAME,PRICE,CATEGORY_ID)
+		VALUES(ITEM_ID_SEQ.nextval,#{name},#{price},#{categoryId})
+	</insert>
 </mapper>

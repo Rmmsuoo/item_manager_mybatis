@@ -20,4 +20,8 @@ public class ItemService {
 	public List<Item> findAll() {
 		return this.itemMapper.findAll();
 	}
+
+	public void create(Item item) {
+		itemMapper.insert(item);
+	}
 }

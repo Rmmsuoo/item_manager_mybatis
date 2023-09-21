@@ -8,7 +8,7 @@
 
 <body>
 	<h1>商品新規登録ページ</h1>
-	<form th:object="${itemForm}" method="post">
+	<form th:object="${itemForm}" method="post" th:action="@{/create}">
 		<div>
 			<label>商品名</label>
 		</div>
