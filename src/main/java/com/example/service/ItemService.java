@@ -24,4 +24,11 @@ public class ItemService {
 	public void create(Item item) {
 		itemMapper.insert(item);
 	}
+
+	public Item findById(Integer id) {
+		return this.itemMapper.findById(id);
+	}
+
+
+
 }
