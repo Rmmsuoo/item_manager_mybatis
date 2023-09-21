@@ -14,4 +14,6 @@ public interface ItemMapper {
 
 	public Item findById(Integer id);
 
+	public void update(Item item);
+
 }
