@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.entity.Category;
@@ -49,4 +50,16 @@ public class ItemController {
 		itemService.create(item);
 		return "redirect:/index";
 	}
+
+	@GetMapping("/edit/{id}")
+	public String showEdit(@PathVariable("id") Integer id, @ModelAttribute ItemForm itemForm, Model model) {
+		Item item = this.itemService.findById(id);
+		itemForm.setName(item.getName());
+		itemForm.setPrice(item.getPrice());
+		itemForm.setCategoryId(item.getCategory().getId());
+		List<Category> categories=this.categoryService.findAll();
+		model.addAttribute("categories",categories);
+		return "edit";
+	}
+
 }

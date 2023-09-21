@@ -39,4 +39,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO ITEMS (ID,NAME,PRICE,CATEGORY_ID)
 		VALUES(ITEM_ID_SEQ.nextval,#{name},#{price},#{categoryId})
 	</insert>
+	<select id="findById" resultMap="itemMap">
+		SELECT
+		I.ID
+		,I.NAME
+		,I.PRICE
+		,I.STOCK
+		,I.DELETED_AT
+		,C.ID AS C_ID
+		,C.NAME AS C_NAME
+		FROM
+		ITEMS I
+		INNER
+		JOIN
+		CATEGORIES C
+		ON
+		C.ID=I.CATEGORY_ID
+		WHERE
+		I.ID=#{id}
+
+	</select>
 </mapper>
